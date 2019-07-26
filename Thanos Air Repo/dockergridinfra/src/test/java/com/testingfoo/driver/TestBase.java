@@ -28,12 +28,7 @@ public class TestBase {
 	@BeforeSuite
 	public void setup() {
 
-		System.setProperty("webdriver.chrome.driver",
-				System.getProperty("user.dir") + "//resources//executables//chromedriver");
-
-		this.driver = new ChromeDriver();
-
-		this.driver.manage().window().maximize();
+		
 
 	}
 
@@ -42,9 +37,6 @@ public class TestBase {
 	@AfterSuite
 	public void tearDown() {
 		
-		if(driver!=null) {
-			driver.quit();
-		}
 
 	}
 }
