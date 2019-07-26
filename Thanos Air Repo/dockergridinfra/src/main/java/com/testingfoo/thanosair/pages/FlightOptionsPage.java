@@ -45,6 +45,8 @@ public class FlightOptionsPage {
 		Thread.sleep(3000);
 		
 		this.wait.until(ExpectedConditions.elementToBeClickable(addBagsOption));
+		Thread.sleep(3000);
+		
 		this.addBagsOption.click();
 		
 		

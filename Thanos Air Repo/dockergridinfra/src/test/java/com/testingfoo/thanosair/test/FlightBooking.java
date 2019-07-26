@@ -17,20 +17,21 @@ import com.testingfoo.thanosair.pages.FlightPointsPage;
 import com.testingfoo.thanosair.pages.FlightSelectionPage;
 import com.testingfoo.thanosair.pages.HomePage;
 
-public class FlightBooking extends TestBase{
+public class FlightBooking{
 
+	private WebDriver driver;
 	private int bagsize = 1;
 
 	@BeforeMethod
 	public void setup() {
-
+		
 		System.setProperty("webdriver.chrome.driver",
 				System.getProperty("user.dir") + "//resources//executables//chromedriver");
 
 		this.driver = new ChromeDriver();
 
 		this.driver.manage().window().maximize();
-
+		
 	} 
 	
 
@@ -93,7 +94,9 @@ public class FlightBooking extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-		//driver.close();
+	
+		driver.close();
+		
 	}
 
 }
