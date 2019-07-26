@@ -6,9 +6,8 @@
       <class name="com.testingfoo.thanosair.test.FlightBooking">
         <methods>
           <include name="launchTest" invocation-numbers="3"/>
-          <include name="setupMethod"/>
-          <include name="tearDown"/>
           <include name="setup"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.testingfoo.thanosair.test.FlightBooking -->
     </classes>
