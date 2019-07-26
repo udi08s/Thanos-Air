@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="365227" started-at="2019-07-26T03:01:29Z" finished-at="2019-07-26T03:07:34Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="365227" started-at="2019-07-26T03:01:29Z" finished-at="2019-07-26T03:07:34Z">
+      <class name="com.testingfoo.thanosair.test.FlightBooking">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="setup" is-config="true" duration-ms="4494" started-at="2019-07-26T03:01:29Z" finished-at="2019-07-26T03:01:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="setupMethod()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="setupMethod" is-config="true" duration-ms="6327" started-at="2019-07-26T03:01:33Z" finished-at="2019-07-26T03:01:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMethod -->
+        <test-method status="PASS" signature="launchTest(java.lang.String)[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="launchTest" duration-ms="66825" started-at="2019-07-26T03:01:40Z" data-provider="bagsCount" finished-at="2019-07-26T03:02:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTest -->
+        <test-method status="PASS" signature="setupMethod()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="setupMethod" is-config="true" duration-ms="4005" started-at="2019-07-26T03:02:47Z" finished-at="2019-07-26T03:02:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-26T03:02:47Z" finished-at="2019-07-26T03:02:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="launchTest(java.lang.String)[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="launchTest" duration-ms="66726" started-at="2019-07-26T03:02:51Z" data-provider="bagsCount" finished-at="2019-07-26T03:03:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-26T03:03:57Z" finished-at="2019-07-26T03:03:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setupMethod()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="setupMethod" is-config="true" duration-ms="3576" started-at="2019-07-26T03:03:57Z" finished-at="2019-07-26T03:04:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMethod -->
+        <test-method status="PASS" signature="launchTest(java.lang.String)[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="launchTest" duration-ms="68072" started-at="2019-07-26T03:04:01Z" data-provider="bagsCount" finished-at="2019-07-26T03:05:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTest -->
+        <test-method status="PASS" signature="setupMethod()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="setupMethod" is-config="true" duration-ms="3736" started-at="2019-07-26T03:05:09Z" finished-at="2019-07-26T03:05:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-26T03:05:09Z" finished-at="2019-07-26T03:05:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="launchTest(java.lang.String)[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="launchTest" duration-ms="69735" started-at="2019-07-26T03:05:13Z" data-provider="bagsCount" finished-at="2019-07-26T03:06:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-26T03:06:22Z" finished-at="2019-07-26T03:06:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setupMethod()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="setupMethod" is-config="true" duration-ms="3712" started-at="2019-07-26T03:06:22Z" finished-at="2019-07-26T03:06:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMethod -->
+        <test-method status="PASS" signature="launchTest(java.lang.String)[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="launchTest" duration-ms="67966" started-at="2019-07-26T03:06:26Z" data-provider="bagsCount" finished-at="2019-07-26T03:07:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.testingfoo.thanosair.test.FlightBooking@4501b7af]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-26T03:07:34Z" finished-at="2019-07-26T03:07:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.testingfoo.thanosair.test.FlightBooking -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

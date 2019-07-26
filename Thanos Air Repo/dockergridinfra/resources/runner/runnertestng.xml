@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Data Driven Suite">
+  <test thread-count="5" name="LoginTesting">
+    <classes>
+     <class name="com.testingfoo.testcases.CreateAccountTest"/> 
+      <class name="com.testingfoo.testcases.SignInTest"/> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
