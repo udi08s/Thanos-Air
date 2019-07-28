@@ -15,7 +15,7 @@ public class FlightOptionsPage {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	@FindBy(xpath="//span[@class='add-bag-btn-text add-bag trigger-modal']")
+	@FindBy(xpath="//button[@class='button-add-bag trigger-modal']")
 	private WebElement addBagsOption;
 	
 	@FindBy(xpath="//button[@class='btn right']")
@@ -29,7 +29,7 @@ public class FlightOptionsPage {
 	
 	public FlightOptionsPage(WebDriver driver) {
 		this.driver=driver;
-		this.wait= new WebDriverWait(driver, 360);
+		this.wait= new WebDriverWait(driver, 20);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -45,14 +45,18 @@ public class FlightOptionsPage {
 		Thread.sleep(3000);
 		
 		this.wait.until(ExpectedConditions.elementToBeClickable(addBagsOption));
-		Thread.sleep(3000);
 		
-		this.addBagsOption.click();
+		//this.addBagsOption.click();
 		
+		Actions actionsTwo = new Actions(driver);
+		JavascriptExecutor jseTwo = (JavascriptExecutor) driver;
+		actionsTwo.moveToElement(addBagsOption).click();
+		jseTwo.executeScript("arguments[0].click()", addBagsOption);
 		
 		int count=1;
 		while(count<number) {
 			
+			this.wait.until(ExpectedConditions.elementToBeClickable(this.BtnRight));
 			this.BtnRight.click();
 			count++;
 			
@@ -62,6 +66,8 @@ public class FlightOptionsPage {
 		
 		this.wait.until(ExpectedConditions.elementToBeClickable(acceptBtn));
 		this.acceptBtn.click();
+		
+		System.out.println(" Selected "+ count+ " of bags");
 	}
 	
 

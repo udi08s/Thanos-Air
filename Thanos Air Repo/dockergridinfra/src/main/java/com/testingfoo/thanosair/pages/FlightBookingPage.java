@@ -1,6 +1,7 @@
 package com.testingfoo.thanosair.pages;
 
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,40 +34,42 @@ public class FlightBookingPage {
 	@FindBy(xpath="//button[@class='qfa1-submit-button__button'][contains(text(),'SEARCH FLIGHTS')]")
 	public WebElement searchBtn;
 	
+	private By toDestination=By.xpath("//input[@id='typeahead-input-to']");
+	
 	public FlightBookingPage(WebDriver driver) {
 		this.driver=driver;
-		this.wait= new WebDriverWait(driver, 360);
+		this.wait= new WebDriverWait(driver, 20);
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void clickOneWayButton() throws InterruptedException {
+	public void clickOneWayRadioButton() throws InterruptedException {
 		
-		Thread.sleep(5000);
-		//this.wait.until(ExpectedConditions.elementToBeClickable(oneWayRadioButton));
-		//this.oneWayRadioButton.click();
+		this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='qfa1-radiobutton__label-text'][contains(text(),'One way')]")));
 		
 		JavascriptExecutor js= (JavascriptExecutor)driver;
 		WebElement el=(WebElement) js.executeScript("return document.getElementById('oneway');"); //Click on Element
-		js.executeScript("arguments[0].click();", el);
+		js.executeScript("arguments[0].click();", el); 
 		
 	}
 	
-	public void enterDestination(String location) {
+	public void enterDestination(String location) throws InterruptedException {
 		
 		this.wait.until(ExpectedConditions.visibilityOf(toField));
 		this.toField.sendKeys(location);
 		
+		//Selecting the element from the autocomplete list
 		WebElement element=driver.findElement(By.id("typeahead-list-item-to-list"));
-		
 		List<WebElement> listOfEntries=element.findElements(By.tagName("li"));
 		
-		System.out.println(listOfEntries.size());
-		
 		for(WebElement i:listOfEntries) {
+
 			if(i.getText().contains(location)) {
 				i.click();
-			}
+			} 
 		}
+	
+		
+		this.wait.until(ExpectedConditions.attributeContains(toDestination, "aria-expanded", "false"));
 		
 	}
 	
@@ -77,9 +80,7 @@ public class FlightBookingPage {
 		js.executeScript("arguments[0].click();", el);
 		
 		List<WebElement> allValidDates=this.allValidDates;
-		
-		//System.out.println(allValidDates.size());
-		
+
 		for (WebElement date : allValidDates) {
 			if (date.getText().equals("15")) {
 				date.click();
@@ -90,15 +91,13 @@ public class FlightBookingPage {
 	}
 
 	public void clickOnSearch() {
-		// TODO Auto-generated method stub
+		
 		
 		this.wait.until(ExpectedConditions.elementToBeClickable(searchBtn));
 		this.searchBtn.click();
 		
 	}
 	
-	
-		
 	
 
 }

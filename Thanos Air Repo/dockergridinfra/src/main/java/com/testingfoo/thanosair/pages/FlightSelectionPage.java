@@ -2,6 +2,7 @@ package com.testingfoo.thanosair.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -34,7 +35,7 @@ public class FlightSelectionPage {
 	
 	public FlightSelectionPage(WebDriver driver) {
 		this.driver=driver;
-		this.wait= new WebDriverWait(driver, 360);
+		this.wait= new WebDriverWait(driver, 20);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -45,16 +46,26 @@ public class FlightSelectionPage {
 	}
 
 	public String selectRed_eDeal() throws InterruptedException {
-		// TODO Auto-generated method stub
 		
 		this.wait.until(ExpectedConditions.visibilityOfAllElements(allRedDeals));
 		
-		this.allRedDeals.get(0).click();
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+		jse.executeScript("scroll(0, 1000)");
+		
+		//Thread.sleep(3000);
+		
+		double randomDouble = Math.random();
+		randomDouble = randomDouble * 5 + 1;
+		int randomInt = (int) randomDouble;
+		
+		
+		this.wait.until(ExpectedConditions.visibilityOf(this.allRedDeals.get(randomInt)));
+		
+		this.allRedDeals.get(randomInt).click();
 		
 		this.wait.until(ExpectedConditions.visibilityOf(dealAmount));
-		
-		//Thread.sleep(5000);
-		
+				
 		return this.dealAmount.getText();
 				
 		
