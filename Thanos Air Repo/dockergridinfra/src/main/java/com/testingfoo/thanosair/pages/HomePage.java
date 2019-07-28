@@ -1,5 +1,6 @@
 package com.testingfoo.thanosair.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,12 +21,16 @@ public class HomePage {
 	
 	public HomePage(WebDriver driver) {
 		this.driver=driver;
-		this.wait= new WebDriverWait(driver, 360);
+		this.wait= new WebDriverWait(driver, 20);
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void goToUrl() {
-		this.driver.get("https://www.qantas.com/au/en.html");
+	public void goToUrl(String testurl) {
+		this.driver.get(testurl);
+		
+		this.wait.until(
+		          webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+		
 		this.wait.until(ExpectedConditions.visibilityOf(bookATripLabel));
 	}
 	

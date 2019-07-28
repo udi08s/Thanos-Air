@@ -1,5 +1,7 @@
 package com.testingfoo.thanosair.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,18 +23,23 @@ public class FlightPointsPage {
 	@FindBy(xpath="//button[@id='btn-accept']")
 	private WebElement fareConditionAcceptBtn;
 	
+	private By whyBookQantasText=By.xpath("/*[contains(text(),'Why book on qantas.com?)]");
+	
 	public FlightPointsPage(WebDriver driver) {
 		this.driver=driver;
-		this.wait= new WebDriverWait(driver, 360);
+		this.wait= new WebDriverWait(driver, 20);
 		PageFactory.initElements(driver, this);
 	}
 	
 	public void clickContinueBtn() throws InterruptedException {
 		
 		Thread.sleep(14000);
-		
+		//this.wait.until(ExpectedConditions.invisibilityOfElementLocated(whyBookQantasText));
+		//this.wait.until(ExpectedConditions.invisibilityOf(element));
+		this.wait.until(
+		          webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+		this.wait.until(ExpectedConditions.visibilityOf(continueBtn));
 		this.wait.until(ExpectedConditions.elementToBeClickable(continueBtn));
-		
 		this.continueBtn.click();
 		
 	}
@@ -41,7 +48,6 @@ public class FlightPointsPage {
 		// TODO Auto-generated method stub
 		
 		this.wait.until(ExpectedConditions.elementToBeClickable(fareConditionAcceptBtn));
-		
 		this.fareConditionAcceptBtn.click();
 		
 	}
