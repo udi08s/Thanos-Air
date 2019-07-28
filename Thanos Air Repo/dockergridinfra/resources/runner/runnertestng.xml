@@ -3,8 +3,7 @@
 <suite name="Data Driven Suite">
   <test thread-count="5" name="LoginTesting">
     <classes>
-     <class name="com.testingfoo.testcases.CreateAccountTest"/> 
-      <class name="com.testingfoo.testcases.SignInTest"/> 
+     <class name="com.testingfoo.thanosair.test.FlightBooking"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
