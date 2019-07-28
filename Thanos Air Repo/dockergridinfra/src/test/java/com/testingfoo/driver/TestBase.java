@@ -63,7 +63,7 @@ public class TestBase {
 				else if (config.getProperty("browser").equals("chrome")) {
 
 					System.setProperty("webdriver.chrome.driver",
-							System.getProperty("user.dir") + "//resources//executables//chromedriver-win.exe");
+							System.getProperty("user.dir") + "//resources//executables//chromedriver.exe");
 					driver = new ChromeDriver();
 					driver.manage().window().maximize();
 				}
@@ -73,7 +73,7 @@ public class TestBase {
 				if (config.getProperty("browser").equals("firefox")) {
 
 					System.setProperty("webdriver.gecko.driver",
-							System.getProperty("user.dir") + "//resources//executables//geckodriver-mac");
+							System.getProperty("user.dir") + "//resources//executables//geckodriver");
 					driver = new FirefoxDriver();
 					driver.manage().window().maximize();
 					driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -83,7 +83,7 @@ public class TestBase {
 				else if (config.getProperty("browser").equals("chrome")) {
 
 					System.setProperty("webdriver.chrome.driver",
-							System.getProperty("user.dir") + "//resources//executables//chromedriver-mac");
+							System.getProperty("user.dir") + "//resources//executables//chromedriver");
 					driver = new ChromeDriver();
 					driver.manage().window().maximize();
 				}
