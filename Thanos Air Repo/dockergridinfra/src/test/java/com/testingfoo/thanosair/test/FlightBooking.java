@@ -71,6 +71,8 @@ public class FlightBooking extends TestBase{
 
 		FlightOptionsPage flightOptionsPage = new FlightOptionsPage(driver);
 
+		flightOptionsPage.clickAddBags();
+		
 		flightOptionsPage.selectAddBags(bagsize);
 		
 

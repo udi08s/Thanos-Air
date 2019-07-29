@@ -56,7 +56,7 @@ public class FlightSelectionPage {
 		//Thread.sleep(3000);
 		
 		double randomDouble = Math.random();
-		randomDouble = randomDouble * 5 + 1;
+		randomDouble = randomDouble * 3 + 1;
 		int randomInt = (int) randomDouble;
 		
 		
@@ -73,9 +73,14 @@ public class FlightSelectionPage {
 	
 	public void clickAddToTrip() {
 		
-		this.wait.until(ExpectedConditions.elementToBeClickable(subTotalValue));
+		this.wait.until(ExpectedConditions.elementToBeClickable(addToTripBtn));
+		
+		/* JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+		jse.executeScript("scroll(0, 1000)"); */
 		
 		this.addToTripBtn.click();
+		
 	}
 	
 	public void clickContinueBtn() {

@@ -33,25 +33,8 @@ public class FlightOptionsPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void selectAddBags(int number) throws InterruptedException {
+	public void selectAddBags(int number) {
 		// TODO Auto-generated method stub
-		
-		Thread.sleep(7000);
-		
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-
-		jse.executeScript("scroll(0, 2500)");
-		
-		Thread.sleep(3000);
-		
-		this.wait.until(ExpectedConditions.elementToBeClickable(addBagsOption));
-		
-		//this.addBagsOption.click();
-		
-		Actions actionsTwo = new Actions(driver);
-		JavascriptExecutor jseTwo = (JavascriptExecutor) driver;
-		actionsTwo.moveToElement(addBagsOption).click();
-		jseTwo.executeScript("arguments[0].click()", addBagsOption);
 		
 		int count=1;
 		while(count<number) {
@@ -68,6 +51,26 @@ public class FlightOptionsPage {
 		this.acceptBtn.click();
 		
 		System.out.println(" Selected "+ count+ " of bags");
+	}
+
+	public void clickAddBags() throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		Thread.sleep(7000);
+		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+		jse.executeScript("scroll(0, 2500)");
+		
+		Thread.sleep(3000);
+		
+		this.wait.until(ExpectedConditions.elementToBeClickable(addBagsOption));
+				
+		Actions actionsTwo = new Actions(driver);
+		JavascriptExecutor jseTwo = (JavascriptExecutor) driver;
+		actionsTwo.moveToElement(addBagsOption).click();
+		jseTwo.executeScript("arguments[0].click()", addBagsOption);
+		
 	}
 	
 
