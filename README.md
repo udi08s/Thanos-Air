@@ -48,5 +48,14 @@ This is the sample project to demostrate the usage of selenium Webdriver tool to
 2. Dont forget to update the config.properties folder before executing the test. </br> 
 3. Try to maintain same names for chromedriver and geckodriver in the resource folder. If the script fails due to incorrect file names, you can change the destination of chromedriver in the TestBase.java class for respective OS & browser.
   
- 
+ # <h3>How to run BDD test? #
+
+  **Using IDE**:</br>
+     * Clone this repository to the local machine.</br>
+     * Open the IDE of your choice. ( Say : Eclipse)</br>
+     * Click on File -> Import -> Maven -> Import Existing maven project.</br>
+     * Once the import is successful, Right click on POM.xml file. Select Run as -> Maven Build.</br>
+     * Once the Maven build is successful, Right click on POM.xml file. Select Run as -> Maven Clean.</br>
+     * Select BDDRunner.java class under src/test/java/com/testingfoo/BDDRunner package. Click on Run.</br>
+
 
