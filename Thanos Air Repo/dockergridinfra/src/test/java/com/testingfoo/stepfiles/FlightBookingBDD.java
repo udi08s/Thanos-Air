@@ -44,63 +44,6 @@ public class FlightBookingBDD {
 @Before()
 public void setup() {
 	
-	/* if (driver == null) {
-
-		try {
-
-			fis = new FileInputStream(
-					System.getProperty("user.dir") + "//resources//properties//config.properties");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		try {
-			config.load(fis);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	} */
-	
-	/* if (config.getProperty("os").equals("windows")) {
-		if (config.getProperty("browser").equals("firefox")) {
-
-			System.setProperty("webdriver.gecko.driver",
-					System.getProperty("user.dir") + "//resources//executables//geckodriver-win64.exe");
-			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
-
-		}
-
-		else if (config.getProperty("browser").equals("chrome")) {
-
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "//resources//executables//chromedriver-win.exe");
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-		}
-	}
-
-	if (config.getProperty("os").equals("mac")) {
-		if (config.getProperty("browser").equals("firefox")) {
-
-			System.setProperty("webdriver.gecko.driver",
-					System.getProperty("user.dir") + "//resources//executables//geckodriver-mac");
-			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
-
-		}
-
-		else if (config.getProperty("browser").equals("chrome")) {
-
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "//resources//executables//chromedriver-mac");
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-		}
-	} */
-	
 	config=ConfigLoader.getConfigDetails();
 	driver=DriverManager.getDriver();
 	testurl = config.getProperty("testsiteurl");
