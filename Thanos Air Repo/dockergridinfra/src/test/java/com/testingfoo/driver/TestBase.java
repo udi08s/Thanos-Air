@@ -1,9 +1,7 @@
 package com.testingfoo.driver;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 
@@ -46,76 +44,74 @@ public class TestBase {
 			}
 		}
 	}
-			
+
 	@BeforeMethod
 	public void driversetup() {
-		
-			if (config.getProperty("os").equals("windows")) {
-				if (config.getProperty("browser").equals("firefox")) {
 
-					System.setProperty("webdriver.gecko.driver",
-							System.getProperty("user.dir") + "//resources//executables//geckodriver-win64.exe");
-					driver = new FirefoxDriver();
-					driver.manage().window().maximize();
+		if (config.getProperty("os").equals("windows")) {
+			if (config.getProperty("browser").equals("firefox")) {
 
-				}
+				System.setProperty("webdriver.gecko.driver",
+						System.getProperty("user.dir") + "//resources//executables//geckodriver-win64.exe");
+				driver = new FirefoxDriver();
+				driver.manage().window().maximize();
 
-				else if (config.getProperty("browser").equals("chrome")) {
-
-					System.setProperty("webdriver.chrome.driver",
-							System.getProperty("user.dir") + "//resources//executables//chromedriver-win.exe");
-					driver = new ChromeDriver();
-					driver.manage().window().maximize();
-				}
 			}
 
-			if (config.getProperty("os").equals("mac")) {
-				if (config.getProperty("browser").equals("firefox")) {
+			else if (config.getProperty("browser").equals("chrome")) {
 
-					System.setProperty("webdriver.gecko.driver",
-							System.getProperty("user.dir") + "//resources//executables//geckodriver-mac");
-					driver = new FirefoxDriver();
-					driver.manage().window().maximize();
-					driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-				}
-
-				else if (config.getProperty("browser").equals("chrome")) {
-
-					System.setProperty("webdriver.chrome.driver",
-							System.getProperty("user.dir") + "//resources//executables//chromedriver-mac");
-					driver = new ChromeDriver();
-					driver.manage().window().maximize();
-				}
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "//resources//executables//chromedriver-win.exe");
+				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 			}
-
-			testurl = config.getProperty("testsiteurl");
-
 		}
-	
-	
+
+		if (config.getProperty("os").equals("mac")) {
+			if (config.getProperty("browser").equals("firefox")) {
+
+				System.setProperty("webdriver.gecko.driver",
+						System.getProperty("user.dir") + "//resources//executables//geckodriver-mac");
+				driver = new FirefoxDriver();
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+			}
+
+			else if (config.getProperty("browser").equals("chrome")) {
+
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "//resources//executables//chromedriver-mac");
+				driver = new ChromeDriver();
+				driver.manage().window().maximize();
+			}
+		}
+
+		testurl = config.getProperty("testsiteurl");
+
+	}
 
 	@AfterSuite
 	public void tearDown() {
 
 		try {
-			
+
 			driver.close();
-			
+
 			fis.close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	@AfterTest
 	public void tearDownMethod() {
 
 		try {
-			
+
 			driver.quit();
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
